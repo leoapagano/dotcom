@@ -1,0 +1,220 @@
+/* INCLUDE: Inter font family */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+/* INCLUDE: JetBrains Mono font family */
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono/JetBrainsMono-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+
+
+/* Main CSS */
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.desktop-window {
+    max-width: 80%;
+    margin: 50px auto;
+    border: 4px solid #000;
+    border-radius: 0px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.title-bar {
+    background-color: #007bff;
+    color: #ffffff;
+    border-bottom: 4px solid #000000;
+    padding: 8px 8px 8px 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.body-text {
+    padding: 5px 20px;
+}
