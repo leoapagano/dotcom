@@ -1,25 +1,23 @@
-# leoapagano.dev
+# leoapagano.com
 
-An Astro-based personal website that is hosted on Cloudflare Pages. This is the "development" version of my site, which I host on leoapagano.dev. (In the future, this will simply become a shortcut to my portfolio page at leoapagano.com.)
+An Astro-based personal website that is hosted on Cloudflare Pages at leoapagano.com.
 
 ## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   └── all assets
+└── src/
+    └── pages/
+        └── all .astro files
+    └── styles/
+        └── all CSS files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+Any static assets, like images or fonts, should be placed in the `public/` directory.
 
 ## Commands
 
