@@ -1,0 +1,46 @@
+/* INCLUDE: Inter font family */
+
+@import url("/fonts/Inter/Inter.css");
+
+/* INCLUDE: JetBrains Mono font family */
+
+@import url("/fonts/JetBrainsMono/JetBrainsMono.css");
+
+/* Main CSS */
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: #d2d2d2
+}
+
+.desktop-window {
+    max-width: 80%;
+    margin: 50px auto;
+    border: 4px solid #000;
+    border-radius: 0px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.title-bar {
+    background-color: #007bff;
+    color: #ffffff;
+    border-bottom: 4px solid #000000;
+    padding: 8px 8px 8px 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.body-text {
+    padding: 5px 20px;
+}
