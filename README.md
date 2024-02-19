@@ -2,6 +2,20 @@
 
 An Astro-based personal website that is hosted on Cloudflare Pages at leoapagano.com.
 
+## Site Layout
+```text
+/
+├── 404.astro
+├── aboutme.astro
+├── index.astro
+├── blog/
+│   ├── index.astro
+│   └── all blog pages
+└── projects/
+    ├── index.astro
+    └── all project pages
+```
+
 ## Project Structure
 
 ```text
