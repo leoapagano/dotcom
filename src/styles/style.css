@@ -18,7 +18,7 @@ body {
 .desktop-window {
     max-width: 80%;
     margin: 50px auto;
-    border: 4px solid #000;
+    border: 3px solid #000;
     border-radius: 0px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -27,8 +27,8 @@ body {
 .title-bar {
     background-color: #007bff;
     color: #ffffff;
-    border-bottom: 4px solid #000000;
-    padding: 8px 8px 8px 10px;
+    border-bottom: 3px solid #000000;
+    padding: 5px 5px 5px 8px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     display: flex;
@@ -37,8 +37,9 @@ body {
 
 .title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 500;
+    text-align: center;
 }
 
 .body-text {
