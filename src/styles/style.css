@@ -16,8 +16,8 @@ body {
 }
 
 .desktop-window {
-    max-width: 80%;
-    margin: 50px auto;
+    max-width: 90%;
+    margin: 4% auto;
     border: 3px solid #000;
     border-radius: 0px;
     background-color: #ffffff;
