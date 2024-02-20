@@ -30,3 +30,9 @@ body {
         font-family: 'JetBrains Mono', sans-serif;
     }
 }
+
+.nav-banner {
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+}
