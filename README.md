@@ -60,7 +60,7 @@ Note that I have yet to implement most of this, as of March 2024.
 │   │
 │   └── styles/
 │       └── global.css
-|
+│
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
