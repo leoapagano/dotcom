@@ -1,25 +1,28 @@
-FOR ALL PAGES:
-- add top navigation bar
-    - "leoapagano.com" text on left side
-    - hamburger menu (may become a full top bar on some platforms) on right side that points to:
-        - rows (text with icons):
-            - home
-            - about me
-            - blog
-            - projects (expands)
-        - bottom (as icons):
-            - github
-            - linkedin
-            - light/dark mode switch
-- create page content (not the actual page, the text on it):
-    - home
-    - about me
-    - blog home
-    - projects home
+COMPONENTS:
+- navbar
+    - title button for "leoapagano.com" which points to index
+    - buttons for each main page
+    - hamburger menu (on mobile)
+- footer
 
-PAGE SPECIFIC:
-- home page design
+LAYOUTS:
+- main template with navbar and footer
 
-MISC:
-- make leoapagano.dev point to leoapagano.com/projects
+CONTENT:
+- write first blog article
+- write first project post
 
+PAGES:
+- all pages need to use the template in LAYOUTS
+- index page
+- 404 page
+- about page
+- blog homepage
+- contact page
+    - web form
+- projects homepage
+
+MISCELLANEOUS:
+- implement robots.txt
+- SEO everything
+- get site & content on search engines
