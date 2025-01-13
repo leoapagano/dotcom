@@ -17,12 +17,31 @@ import '../styles/reset.css';
 		<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
 		<div id="container">
 			<main>
-				<h1>Contact</h1>
-				<p>Stuff goes <a>here</a>.</p>
+				<h1>Contact Me</h1>
+				<h2>This form is the fastest way for those I don't already know to reach me.</h2>
+				<h2>If you included valid contact information, expect a response within 48 hours, barring weekends and holidays.</h2>
+				<form>
+					<div class="input">
+						<input id="fullname" class="formitem" name="fullname" type="text" placeholder="Full name (required)" required />
+					</div>
+					<div class="input">
+						<input id="email" class="formitem" name="email" type="email" placeholder="Email address (required)" required />
+					</div>
+					<div class="input">
+						<input id="phone" class="formitem" name="phone" type="tel" placeholder="Phone number (optional)" />
+					</div>
+					<div class="input">
+						<textarea id="message" class="formitem" name="message" rows="12" placeholder="Type away..." required />
+					</div>
+					<button class="submit-button" type="submit">Submit</button>
+				</form>
 			</main>
 		</div>
 	</body>
 </html>
+
+
+
 
 <style>
 	/* Basics */
@@ -76,6 +95,12 @@ import '../styles/reset.css';
 		font-size: 40px;
 		font-weight: 400;
 	}
+	h2 {
+		font-size: 16px;
+		font-weight: 500;
+		font-style: italic;
+		margin: 8px 0;
+	}
 	a {
 		color: #39404f;
 		text-decoration: underline;
@@ -89,6 +114,21 @@ import '../styles/reset.css';
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: 500;
+	}
+
+
+	/* Contact form itself */
+	form {
+		overflow: hidden;
+	}
+	.formitem, .submit-button {
+		margin: 3px;
+	}
+	.formitem {
+		width: calc(100% - 6px);
+	}
+	#message {
+		resize: none;
 	}
 </style>
 
