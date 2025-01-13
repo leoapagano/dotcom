@@ -13,10 +13,26 @@ import '../styles/reset.css';
 		<title>Contact | leoapagano.com</title>
 	</head>
 	<body>
+		<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
 		<div id="container">
-			<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
 			<main>
 				<h1>Contact</h1>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
+				<p>Stuff goes here.</p>
 				<p>Stuff goes here.</p>
 			</main>
 		</div>
@@ -31,8 +47,16 @@ import '../styles/reset.css';
 		height: 100%;
 	}
 	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-family: 'Inter', sans-serif;
 		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	@media screen and (min-width: 768px) {
+		#container {
+			align-items: center;
+		}
 	}
 
 
@@ -46,6 +70,19 @@ import '../styles/reset.css';
 		z-index: -1;
 		object-fit: cover;
 		object-position: top center;
+	}
+
+
+	/* Contact form block */
+	main {
+		background: #ffffff;
+		opacity: 0.8;
+		border-radius: 15px;
+		margin: 24px;
+		padding: 15px;
+		padding-top: 10px;
+		max-width: 640px;
+		flex: 1;
 	}
 
 
