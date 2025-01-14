@@ -17,8 +17,8 @@ import '../styles/reset.css';
 		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-		<!-- Turnstile -->
-		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer />
+		<!-- Basin JS -->
+		<script src="https://js.usebasin.com/v2.3.0.min.js" async></script>
 	</head>
 	<body>
 		<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
@@ -27,7 +27,7 @@ import '../styles/reset.css';
 				<h1>Contact Me</h1>
 				<h2>This form is the fastest way for those I don't already know to reach me.</h2>
 				<h2><i>If you included valid contact information, expect a response within 48 hours, barring weekends and holidays.</i></h2>
-				<form method="POST" action="https://usebasin.com/f/85671cd868ac">
+				<form method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile'>
 					<div class="input">
 						<input id="fullname" class="formitem" name="fullname" type="text" placeholder="Full name (required)" required />
 					</div>
@@ -43,6 +43,8 @@ import '../styles/reset.css';
 
 					<div class="cf-turnstile submit-button" data-sitekey="0x4AAAAAAA5RE1I-uT71yDEi" data-callback="turnstileCallback" />
 					<button class="submit-button" type="submit">Submit</button>
+					<div id="form1-success" style="display: none;">Thank you for your submission!</div>
+					<div id="form1-error" style="display: none;">Oops, something went wrong.</div>
 				</form>
 				<footer>
 					<p><a href="https://github.com/leoapagano" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/leoapagano" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
@@ -52,18 +54,6 @@ import '../styles/reset.css';
 		</div>
 	</body>
 </html>
-
-
-<script>
-	window.onloadTurnstileCallback = function () {
-		turnstile.render("#example-container", {
-			sitekey: "0x4AAAAAAA5RE1I-uT71yDEi",
-			callback: function (token) {
-			console.log(`Challenge Success ${token}`);
-			},
-		});
-	};
-</script>
 
 
 <style>
