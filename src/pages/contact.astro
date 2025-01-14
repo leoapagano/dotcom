@@ -40,8 +40,6 @@ import '../styles/reset.css';
 					<div class="input">
 						<textarea id="message" class="formitem" name="message" rows="12" placeholder="Type away..." required />
 					</div>
-
-					<div class="cf-turnstile submit-button" data-sitekey="0x4AAAAAAA5RE1I-uT71yDEi" data-callback="turnstileCallback" />
 					<button class="submit-button" type="submit">Submit</button>
 				</form>
 				<div id="form-success" style="display: none;">Thank you for your submission!</div>
@@ -142,7 +140,7 @@ import '../styles/reset.css';
 	form {
 		overflow: hidden;
 	}
-	.formitem, .submit-button {
+	.basin-turnstile-container, .formitem, .submit-button {
 		margin: 3px;
 	}
 	.formitem {
