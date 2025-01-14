@@ -88,7 +88,7 @@ import '../styles/reset.css';
 	}
 
 
-	/* Contact form block */
+	/* Main block */
 	main {
 		background: #ffffff;
 		opacity: 0.8;
@@ -101,7 +101,7 @@ import '../styles/reset.css';
 	}
 
 
-	/* Text */
+	/* All text */
 	h1 {
 		font-size: 40px;
 		font-weight: 400;
@@ -114,7 +114,6 @@ import '../styles/reset.css';
 	a {
 		color: #39404f;
 		text-decoration: underline;
-		transition: color 0.2s;
 	}
 	a:hover {
 		color: #6b7583;
@@ -127,27 +126,29 @@ import '../styles/reset.css';
 	}
 
 
+	/* Contact form itself */
+	form {
+		overflow: hidden;
+		padding: 3px;
+	}
+	.submit-button {
+		margin-bottom: 10px;
+	}
+	.formitem {
+		margin-bottom: 6px;
+		width: 100%;
+	}
+	#message {
+		resize: none;
+	}
+
+
 	/* Copyright footer */
 	footer {
 		margin-top: 3px;
 	}
 	footer p {
 		font-size: 13px;
-	}
-
-
-	/* Contact form itself */
-	form {
-		overflow: hidden;
-	}
-	.basin-turnstile-container, .formitem, .submit-button {
-		margin: 3px;
-	}
-	.formitem {
-		width: calc(100% - 6px);
-	}
-	#message {
-		resize: none;
 	}
 </style>
 
