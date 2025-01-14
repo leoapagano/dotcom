@@ -16,6 +16,9 @@ import '../styles/reset.css';
 		<link rel="icon" href="/favicon.png" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<!-- Turnstile -->
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer />
 	</head>
 	<body>
 		<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
@@ -37,6 +40,8 @@ import '../styles/reset.css';
 					<div class="input">
 						<textarea id="message" class="formitem" name="message" rows="12" placeholder="Type away..." required />
 					</div>
+
+					<div class="cf-turnstile submit-button" data-sitekey="0x4AAAAAAA5RE1I-uT71yDEi" data-callback="turnstileCallback" />
 					<button class="submit-button" type="submit">Submit</button>
 				</form>
 				<footer>
@@ -49,6 +54,16 @@ import '../styles/reset.css';
 </html>
 
 
+<script>
+	window.onloadTurnstileCallback = function () {
+		turnstile.render("#example-container", {
+			sitekey: "0x4AAAAAAA5RE1I-uT71yDEi",
+			callback: function (token) {
+			console.log(`Challenge Success ${token}`);
+			},
+		});
+	};
+</script>
 
 
 <style>
