@@ -1,0 +1,157 @@
+---
+import background from '../assets/background.png';
+import '../styles/fonts.css';
+import '../styles/reset.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Contact | leoapagano.com</title>
+
+		<!-- Favicons -->
+		<link rel="icon" href="/favicon.png" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<!-- Basin JS -->
+		<script src="https://js.usebasin.com/v2.3.0.min.js" async></script>
+	</head>
+	<body>
+		<img id="background" src={background.src} alt="Background image" fetchpriority="high" />
+		<div id="container">
+			<main>
+				<h1>Contact Me</h1>
+				<h2>This form is the fastest way for those I don't already know to reach me.</h2>
+				<h2><i>If you included valid contact information, expect a response within 48 hours, barring weekends and holidays.</i></h2>
+				<form method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="#form-success" data-basin-error-id="#form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
+					<div class="input">
+						<input id="fullname" class="formitem" name="fullname" type="text" placeholder="Full name (required)" required />
+					</div>
+					<div class="input">
+						<input id="email" class="formitem" name="email" type="email" placeholder="Email address (required)" required />
+					</div>
+					<div class="input">
+						<input id="phone" class="formitem" name="phone" type="tel" placeholder="Phone number (optional)" />
+					</div>
+					<div class="input">
+						<textarea id="message" class="formitem" name="message" rows="12" placeholder="Type away..." required />
+					</div>
+					<button class="submit-button" type="submit">Submit</button>
+				</form>
+				<div id="form-success" style="display: none;">Thank you for your submission!</div>
+				<div id="form-error" style="display: none;">Oops, something went wrong.</div>
+				<footer>
+					<p><a href="https://github.com/leoapagano" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/leoapagano" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+					<p>&copy; 2025 Leo Pagano - all rights reserved</p>
+				</footer>
+			</main>
+		</div>
+	</body>
+</html>
+
+
+<style>
+	/* Basics */
+	html, body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#container {
+		font-family: 'Inter', sans-serif;
+		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	@media screen and (min-width: 768px) {
+		#container {
+			align-items: center;
+		}
+	}
+
+
+	/* Background image */
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+
+	/* Main block */
+	main {
+		background: #ffffff;
+		opacity: 0.8;
+		border-radius: 15px;
+		margin: 24px;
+		padding: 15px;
+		padding-top: 10px;
+		max-width: 640px;
+		flex: 1;
+	}
+
+
+	/* All text */
+	h1 {
+		font-size: 40px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 16px;
+		font-weight: 500;
+		margin: 8px 0;
+	}
+	a {
+		color: #39404f;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: #6b7583;
+	}
+	p {
+		color: #111827;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+
+
+	/* Contact form itself */
+	form {
+		overflow: hidden;
+		padding: 3px;
+	}
+	.submit-button {
+		margin-bottom: 10px;
+	}
+	.formitem {
+		margin-bottom: 6px;
+		width: 100%;
+	}
+	#message {
+		resize: none;
+	}
+
+
+	/* Copyright footer */
+	footer {
+		margin-top: 3px;
+	}
+	footer p {
+		font-size: 13px;
+	}
+</style>
+
+
+
+
