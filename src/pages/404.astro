@@ -1,7 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="refresh" content="0;url=https://github.com/leoapagano/" />
-    </head>
-</html>
+---
+import { Picture } from 'astro:assets';
+import background from '../assets/background.png';
+import Common from '../layouts/common.astro';
+import gif_404 from '../assets/404.gif';
+import '../styles/fonts.css';
+import '../styles/reset.css';
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<script src="https://js.usebasin.com/v2.3.0.min.js" async></script>
+</head>
+
+
+<Common background_path={background.src} title="404 - Not Found">
+	<h1>404 - Not Found</h1>
+	<p>This page doesn't exist. <a href="/">Go home</a>?</p>
+    <Picture src={gif_404} formats={['gif']} alt="Whooosh..." />
+</Common>
+
+
+<style>
+	/* Text formatting */
+	h1 {
+		font-size: 40px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 16px;
+		font-weight: 500;
+		margin: 8px 0;
+	}
+	a {
+		color: #39404f;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: #6b7583;
+	}
+</style>
