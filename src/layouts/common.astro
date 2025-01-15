@@ -1,0 +1,92 @@
+---
+const { background_path } = Astro.props;
+const { title } = Astro.props;
+import Wallpaper from '../components/wallpaper.astro';
+import '../styles/fonts.css';
+import '../styles/reset.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Document settings -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | leoapagano.com</title>
+
+		<!-- Favicons -->
+		<link rel="icon" href="/favicon.png" sizes="32x32">
+		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+	<body>
+		<Wallpaper background_path={background_path} />
+		<div id="container">
+			<main>
+				<slot />
+				<footer>
+					<p><a href="https://github.com/leoapagano" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/leoapagano" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+					<p>&copy; 2025 Leo Pagano - all rights reserved</p>
+				</footer>
+			</main>
+		</div>
+	</body>
+</html>
+
+
+<style>
+	/* Basics */
+	html, body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#container {
+		font-family: 'Inter', sans-serif;
+		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		overflow-y: scroll;
+	}
+	@media screen and (min-width: 768px) {
+		#container {
+			align-items: center;
+		}
+	}
+
+
+	/* Main block */
+	main {
+		background: #ffffff;
+		opacity: 0.8;
+		border-radius: 15px;
+		margin: 24px;
+		padding: 15px;
+		padding-top: 10px;
+		max-width: 640px;
+		flex: 1;
+		overflow-y: auto;
+	}
+
+
+	/* Copyright footer */
+	footer {
+		margin-top: 3px;
+	}
+	footer a {
+		color: #39404f;
+		text-decoration: underline;
+	}
+	footer a:hover {
+		color: #6b7583;
+	}
+	footer p {
+		color: #111827;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 500;
+		font-size: 13px;
+	}
+</style>
