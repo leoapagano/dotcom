@@ -1,5 +1,6 @@
 ---
 const { background_path } = Astro.props;
+const { title } = Astro.props;
 import Wallpaper from '../components/wallpaper.astro';
 import '../styles/fonts.css';
 import '../styles/reset.css';
@@ -8,18 +9,16 @@ import '../styles/reset.css';
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Document settings -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Contact | leoapagano.com</title>
+		<title>{title} | leoapagano.com</title>
 
 		<!-- Favicons -->
 		<link rel="icon" href="/favicon.png" sizes="32x32">
 		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-		<!-- Basin JS -->
-		<script src="https://js.usebasin.com/v2.3.0.min.js" async></script>
 	</head>
 	<body>
 		<Wallpaper background_path={background_path} />

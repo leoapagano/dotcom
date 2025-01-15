@@ -5,7 +5,15 @@ import '../styles/fonts.css';
 import '../styles/reset.css';
 ---
 
-<Common background_path={background.src}>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<script src="https://js.usebasin.com/v2.3.0.min.js" async></script>
+</head>
+
+
+<Common background_path={background.src} title="Contact Me">
 	<h1>Contact Me</h1>
 	<h2>This form is the fastest way for those I don't already know to reach me.</h2>
 	<h2><i>If you included valid contact information, expect a response within 48 hours, barring weekends and holidays.</i></h2>
