@@ -14,13 +14,13 @@ const projects = await getAllProjects()
 
   <section>
     <div class="min-w-full">
-      <h3 class="mb-4 text-3xl font-medium">Portfolio</h3>
+      <h3 class="mb-4 text-3xl">Portfolio</h3>
       <p class="mb-8">A quick look at some of the projects I've done over the years.</p>
 
-      <h4 class="mb-4 text-2xl font-medium">All Tags</h4>
+      <h4 class="mb-4 text-2xl">All Tags</h4>
       <p class="mb-8"><i>TODO BEFORE DEPLOYMENT: implement this</i></p>
 
-      <h4 class="mb-4 text-2xl font-medium">All Projects</h4>
+      <h4 class="mb-4 text-2xl">All Projects</h4>
       <div class="flex flex-col gap-4">
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
