@@ -12,10 +12,6 @@ export const SITE: Site = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
-    href: '/about',
-    label: 'about',
-  },
-  {
     href: '/blog',
     label: 'blog',
   },
