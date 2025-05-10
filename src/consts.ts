@@ -5,7 +5,6 @@ export const SITE: Site = {
   description:
     'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
   href: 'https://leoapagano.com',
-  author: 'Leo Pagano',
   locale: 'en-US',
   featuredPostCount: 3,
   postsPerPage: 10,
@@ -15,10 +14,6 @@ export const NAV_LINKS: SocialLink[] = [
   {
     href: '/blog',
     label: 'blog',
-  },
-  {
-    href: '/authors',
-    label: 'authors',
   },
   {
     href: '/about',
