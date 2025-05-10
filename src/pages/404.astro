@@ -9,21 +9,37 @@ import { cn } from '@/lib/utils'
 
 <Layout>
   <PageHead slot="head" title="404" />
-  <Breadcrumbs items={[{ label: '???', icon: 'lucide:circle-help' }]} />
+  <Breadcrumbs items={[{ label: '404', icon: 'lucide:circle-x' }]} />
 
   <section
     class="flex flex-col items-center justify-center gap-y-4 text-center"
   >
     <div class="max-w-md">
-      <h1 class="mb-4 text-3xl font-medium">404: Page not found</h1>
-      <p class="prose">Oops! The page you're looking for doesn't exist.</p>
+      <h1 class="mb-4 text-8xl font-medium">404</h1>
+      <p class="prose">The page you're looking for doesn't exist. It might've been renamed, moved, or deleted. (Or eaten by a black hole.)</p>
     </div>
-    <Link
-      href="/"
-      class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
-    >
-      <span class="transition-transform group-hover:-translate-x-1">&larr;</span
-      > Go to home page
-    </Link>
+    <div class="flex gap-x-4">
+      <Link
+        href="/"
+        class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
+      >
+        <span class="transition-transform">&#8617;</span
+        > Abort
+      </Link>
+      <Link
+        href=""
+        class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
+      >
+        <span class="transition-transform">&#8635;</span
+        > Retry
+      </Link>
+      <Link
+        href="https://www.youtube.com/watch?v=E4WlUXrJgy4"
+        class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
+      >
+        <span class="transition-transform">&#10060;</span
+        > Fail
+      </Link>
+    </div>
   </section>
 </Layout>
