@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "broadcast": "astro dev --host",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "compile": "astro check && astro build && astro preview",
+    "compilecast": "astro check && astro build && astro preview --host",
     "astro": "astro",
     "prettier": "prettier --write **/*.{ts,tsx,css,astro} --ignore-path .gitignore",
     "postinstall": "patch-package"

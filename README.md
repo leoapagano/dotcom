@@ -1,54 +1,55 @@
-![Showcase Card](/public/static/twitter-card.png)
+# leoapagano.com
 
-<div align="center">
+A clean, minimalistic website with a blog, a portfolio, and a contact form that nobody uses and yet I still maintain.
 
-## astro-erudite
-
-![Stargazers]
-[![License]](LICENSE)
-
-</div>
-
-astro-erudite is an opinionated, unstyled static blogging template built with [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/). Extraordinarily loosely based off the [Astro Micro](https://astro-micro.vercel.app/) theme by [trevortylerlee](https://github.com/trevortylerlee).
-
-| ![Preview 1](/public/static/preview-1.png) | ![Preview 2](/public/static/preview-2.png) |
-| ------------------------------------------ | ------------------------------------------ |
-| ![Preview 3](/public/static/preview-3.png) | ![Preview 4](/public/static/preview-4.png) |
-
-> [!NOTE]
-> To learn more about why this template exists, read [The State of Static Blogs in 2024](https://astro-erudite.vercel.app/blog/the-state-of-static-blogs), where I share my take on what constitutes a great blogging template and my goals while developing this one.
-
----
-
-## Community Examples
-
-Below are some fantastic examples of websites based on this template. If you wish to add your site to this list, open a pull request!
-
-| Site                                          | Author                                             | Description/Features                                                                         | Source                                                 |
-| --------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| [enscribe.dev](https://enscribe.dev)          | [@jktrn](https://github.com/jktrn)                 | Heavily modified bento-style homepage with client interactivity, with custom MDX components! | [→](https://github.com/jktrn/enscribe.dev)             |
-| [emile.sh](https://emile.sh)                  | [@echoghi](https://github.com/echoghi)             | A minimalist personal blog using the [flexoki](https://stephango.com/flexoki) theme          | [→](https://github.com/echoghi/v5)                     |
-| [decentparadox.me](https://decentparadox.me)  | [@decentparadox](https://github.com/decentparadox) | A heavily customized personal portfolio with a sci-fi theme!                                 | [→](https://github.com/decentparadox/decentparadox.me) |
-| [flocto.github.io](https://flocto.github.io/) | [@flocto](https://github.com/flocto)               | A slightly modified personal blog                                                            | [→](https://github.com/flocto/flocto.github.io)        |
-| [dumbprism.me](https://www.dumbprism.me/)     | [@dumbprism](https://github.com/dumbprism)         | A customized portfolio inspired by enscribe's bento grid style adding my gist of UI          | [→](https://github.com/dumbprism/dumbprism-portfolio)  |
-| [hyuki.dev](https://hyuki.dev/)               | [@snow0406](https://github.com/snow0406)           | A minimalist blog with a blue color scheme, focusing on simplicity!                          | [→](https://github.com/Snow0406/hyuki.dev)             |
-| [ldd.cc](https://ldd.cc/)                     | [@xJoyLu](https://github.com/xjoylu)               | The cream of the idlers.                                                                     | [→](https://ldd.cc/)                    |
-| [rezarezvan.com](https://rezarezvan.com/)     | [@rezaarezvan](https://github.com/rezaarezvan)     | A academic blog with personal touches :).                                                    | [→](https://rezarezvan.com/)            |
-| [blog.z0x.ca](https://blog.z0x.ca/)           | [@z0x](https://z0x.ca)                             | _Very_ minimal version of erudite, stripping it down to the bare essentials                  | [→](https://git.z0x.ca/z0x/blog.z0x.ca/)               |
+The site is based on a modified version of [Erudite](https://github.com/jktrn/astro-erudite) v1.5.0 by [Enscribe](https://enscribe.dev).
 
 ## Features
 
-- [Astro](https://astro.build/)&rsquo;s [Islands](https://docs.astro.build/en/concepts/islands/) architecture for partial/selective hydration and client-side interactivity while maintaining a fast-to-render static site.
-- [shadcn/ui](https://ui.shadcn.com/)&rsquo;s [Tailwind](https://tailwindcss.com/) color convention for automatic styling across both light and dark themes. Includes accessible, theme-aware UI components for navigation, buttons, etc.
-- [Expressive Code](https://expressive-code.com/) for advanced code block styling, highlighting, and code block titles/captions.
-- Blog post authoring using [MDX](https://mdxjs.com/) for component-style content, alongside $\LaTeX$ rendering using [KaTeX](https://katex.org/).
-- Astro [View Transitions](https://docs.astro.build/en/guides/view-transitions/) in <abbr title="Single Page Application">SPA</abbr> mode for smooth, opt-in animations during route switching.
-- SEO optimization with fine-grained control over metadata and [Open Graph](https://ogp.me/) tags for each post.
-- [RSS](https://en.wikipedia.org/wiki/RSS) feeds and sitemap generation!
-- Supports author profiles (with a dedicated authors page) and adding multiple authors per post.
-- Supports project tags (with a dedicated tags page) for easy post categorization and discovery.
+- 🌓 Dark mode support
+- 📱 Responsive design
+- 📝 Markdown/MDX for content authoring
+- 🔗 Social media buttons
+- 🔍 SEO-friendly
+- 📰 RSS feed & sitemap support
+- 🎨 Transitions and animations
+- ...and more!
 
-## Technology Stack
+## Building
+
+To get started, install dependencies:
+
+```shell
+git clone https://github.com/leoapagano/dotcom
+cd dotcom
+npm install
+```
+
+To preview the site as it is, run the following command at the base of the repo:
+
+```shell
+npm run dev
+```
+
+Other NPM commands are as follows:
+
+| Command                   | Action                                                                 |
+| :------------------------ | :--------------------------------------------------------------------- |
+| `npm install`             | Installs dependencies                                                  |
+| `npm update`              | Upgrades dependencies                                                  |
+| `npm run dev`             | Starts local dev server at `localhost:4321`                            |
+| `npm run broadcast`       | Broadcasts dev server at `localhost:4321`                              |
+| `npm run build`           | Build production site to `./dist/`                                     |
+| `npm run preview`         | Preview your build locally, before deploying                           |
+| `npm run compile`         | Builds and previews the site exactly as it will appear in production   |
+| `npm run compilecast`     | Builds and broadcasts the site exactly as it will appear in production |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`                       |
+| `npm run astro -- --help` | Get help using the Astro CLI                                           |
+| `npm run prettier`        | Blanket format all files using [Prettier](https://prettier.io/)        |
+
+All CLI commands are run from the project's base directory.
+
+## Tech Stack
 
 This is a list of the various technologies used to build this template:
 
@@ -60,46 +61,13 @@ This is a list of the various technologies used to build this template:
 | Content    | [MDX](https://mdxjs.com/)                                                                  |
 | Codeblocks | [Expressive Code](https://expressive-code.com/), [Shiki](https://github.com/shikijs/shiki) |
 | Graphics   | [Figma](https://www.figma.com/)                                                            |
-| Deployment | [Vercel](https://vercel.com)                                                               |
-
-## Getting Started
-
-1. Hit &ldquo;Use this template&rdquo;, the big green button on the top right, to create a new repository in your own GitHub account with this template.
-
-2. Clone the repository:
-
-   ```bash
-   git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPO_NAME].git
-   cd [YOUR_REPO_NAME]
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open your browser and visit `http://localhost:1234` to get started. The following commands are also available:
-
-   | Command            | Description                                                     |
-   | ------------------ | --------------------------------------------------------------- |
-   | `npm run start`    | Alias for `npm run dev`                                         |
-   | `npm run build`    | Run type checking and build the project                         |
-   | `npm run preview`  | Previews the built project                                      |
-   | `npm run astro`    | Run Astro CLI commands                                          |
-   | `npm run prettier` | Blanket format all files using [Prettier](https://prettier.io/) |
+| Deployment | [Vercel](https://vercel.com)     
 
 ## Customization
 
 ### Site Configuration
 
-Edit the `src/consts.ts` file to update your site's metadata, navigation links, and social links:
+Edit the `src/consts.ts` file to update the site's metadata, navigation links, and social links:
 
 ```ts
 export const SITE: Site = {
@@ -266,19 +234,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-### Star History
-
-<a href="https://star-history.com/#jktrn/astro-erudite&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=jktrn/astro-erudite&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=jktrn/astro-erudite&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=jktrn/astro-erudite&type=Date" />
- </picture>
-</a>
-
----
-
-Built with &hearts; by [enscribe](https://enscribe.dev)!
-
-[Stargazers]: https://img.shields.io/github/stars/jktrn/astro-erudite?color=fafafa&logo=github&logoColor=fff&style=for-the-badge
-[License]: https://img.shields.io/github/license/jktrn/astro-erudite?color=0a0a0a&logo=github&logoColor=fff&style=for-the-badge
+This site is best viewed with Microsoft Internet Explorer 6.
