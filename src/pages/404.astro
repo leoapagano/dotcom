@@ -5,6 +5,7 @@ import PageHead from '@/components/PageHead.astro'
 import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
 import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Layout>
@@ -23,22 +24,22 @@ import { cn } from '@/lib/utils'
         href="/"
         class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
       >
-        <span class="transition-transform">&#8617;</span
-        > Abort
+        <Icon name="lucide:undo-2" class="size-4" />
+        Abort
       </Link>
       <Link
         href=""
         class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
       >
-        <span class="transition-transform">&#8635;</span
-        > Retry
+        <Icon name="lucide:rotate-ccw" class="size-4" />
+        Retry
       </Link>
       <Link
         href="https://www.youtube.com/watch?v=E4WlUXrJgy4"
         class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
       >
-        <span class="transition-transform">&#10060;</span
-        > Fail
+        <Icon name="lucide:x" class="size-4" />
+        Fail
       </Link>
     </div>
   </section>
