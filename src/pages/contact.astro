@@ -1,0 +1,141 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+---
+
+<head>
+	<script src="https://js.usebasin.com/v2.6.0.min.js" async></script>
+</head>
+
+
+<Layout>
+  <PageHead slot="head" title="Portfolio" />
+  <Breadcrumbs items={[{ label: 'Portfolio', icon: 'lucide:gallery-vertical-end' }]} />
+
+  <section>
+    <div class="min-w-full">
+      <h3 class="mb-2 text-3xl">Contact Me</h3>
+      <p class="mb-2">This form is the fastest way for those I don't already know to reach me.</p>
+      <p class="mb-4">If you included valid contact information, expect a response within 48 hours, barring weekends and holidays.</p>
+
+      <p class="mb-8" id="form-success"><b>Thank you for your submission! I'll get back to you as soon as I can.</b></p>
+      <p class="mb-8" id="form-error"><b>Oops, something went wrong. Please try again. (Did you complete the Turnstile challenge?)</b></p>
+
+      <form class="mb-8" id="contactForm" method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="form-success" data-basin-error-id="form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
+        <!-- The positioning we use for the icons here is very hacky but whatever -->
+        <div class="relative">
+          <Icon name="lucide:user" class="absolute left-3 top-1/4 text-primary size-4" />
+          <input
+            id="fullname"
+            class={cn('formitem border rounded-md pl-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary')}
+            name="fullname"
+            type="text"
+            placeholder="Full name (required)"
+            required
+          />
+        </div>
+        <div class="flex gap-2">
+          <div class="relative flex-1">
+            <Icon name="lucide:mail" class="absolute left-3 top-1/4 text-primary size-4" />
+            <input
+              id="email"
+              class={cn('formitem border rounded-md pl-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary')}
+              name="email"
+              type="email"
+              placeholder="Email address (required)"
+              required
+            />
+          </div>
+          <div class="relative flex-1">
+            <Icon name="lucide:phone" class="absolute left-3 top-1/4 text-primary size-4" />
+            <input
+              id="phone"
+              class={cn('formitem border rounded-md pl-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary')}
+              name="phone"
+              type="tel"
+              placeholder="Phone number (optional)"
+            />
+          </div>
+        </div>
+        <div class="relative">
+          <Icon name="lucide:message-circle" class="absolute left-3 top-2.5 text-primary size-4" />
+          <textarea
+            id="message"
+            class={cn('formitem border rounded-md pl-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none')}
+            name="message"
+            rows="8"
+            placeholder="Type away..."
+            required
+          ></textarea>
+        </div>
+        <button class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')} type="submit">
+          <Icon name="lucide:send" class="size-4" />
+          Submit
+        </button>
+        <div class="mb-4" />
+      </form>
+
+      <script>
+        document.getElementById('contactForm')!.style.display = 'block';
+      </script>
+      <noscript>
+        <p class="mb-8" style="color: red;">This form requires a web browser with JavaScript enabled. Please enable JavaScript, reload, and try again.</p>
+      </noscript>
+    </div>
+  </section>
+</Layout>
+
+
+<script>
+  function showForm() {
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.style.display = 'block'; // Show the form when JS is enabled
+    }
+  }
+
+  // Handle initial page load
+  document.addEventListener('DOMContentLoaded', showForm);
+
+  // Handle navigation to this page
+  document.addEventListener('astro:after-swap', () => {
+    if (window.location.pathname === '/contact') {
+      showForm();
+    }
+  });
+</script>
+
+
+<style>
+	/* Form feedback messages */
+	#form-success {
+		color: green;
+		display: none;
+	}
+	#form-error {
+		color: red;
+		display: none;
+	}
+
+	/* Contact form */
+	#contactForm {
+		overflow: hidden;
+		display: none;
+    padding: 3px;
+	}
+	.formitem {
+		margin-bottom: 6px;
+		width: 100%;
+	}
+	#message {
+		resize: vertical;
+    min-height: 36px;
+	}
+	.submit-button {
+		margin-bottom: 10px;
+	}
+</style>
