@@ -3,7 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'Leo Pagano',
   description:
-    'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
+    "I'm currently a rising junior at the University of Connecticut studying Computer Science and Engineering.",
   href: 'https://leoapagano.com',
   locale: 'en-US',
   featuredPostCount: 3,
