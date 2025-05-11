@@ -36,11 +36,8 @@ const sortedTags = await getSortedTags()
       { label: `Page ${page.currentPage}`, icon: 'lucide:folder-open' },
     ]}
   />
-
-  <h3 class="text-3xl leading-none">Blog</h3>
-
-  <h4 class="text-2xl leading-none">All Tags</h4>
-
+  <h2 class="text-4xl">Blog</h2>
+  <h3 class="text-3xl">All Tags</h3>
   <div class="flex flex-col gap-4">
     <div class="flex flex-wrap gap-2">
       {
@@ -58,13 +55,13 @@ const sortedTags = await getSortedTags()
     </div>
   </div>
 
-  <h4 class="text-2xl leading-none">Posts By Year</h4>
+  <h3 class="text-3xl leading-none">Posts By Year</h3>
 
   <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
     {
       years.map((year) => (
         <section class="flex flex-col gap-y-4">
-          <div>{year}</div>
+          <h4 class="text-2xl">{year}</h4>
           <ul class="flex flex-col gap-4">
             {postsByYear[year].map((post) => (
               <li>
