@@ -14,7 +14,7 @@ import { Icon } from 'astro-icon/components'
 
 <Layout>
   <PageHead slot="head" title="Portfolio" />
-  <Breadcrumbs items={[{ label: 'Portfolio', icon: 'lucide:gallery-vertical-end' }]} />
+  <Breadcrumbs items={[{ label: 'Contact Me', icon: 'lucide:message-square' }]} />
 
   <section>
     <div class="min-w-full">
@@ -25,7 +25,7 @@ import { Icon } from 'astro-icon/components'
       <p class="mb-8" id="form-success"><b>Thank you for your submission! I'll get back to you as soon as I can.</b></p>
       <p class="mb-8" id="form-error"><b>Oops, something went wrong. Please try again. (Did you complete the Turnstile challenge?)</b></p>
 
-      <form class="mb-8" id="contactForm" method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="form-success" data-basin-error-id="form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
+      <form class="" id="contactForm" method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="form-success" data-basin-error-id="form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
         <!-- The positioning we use for the icons here is very hacky but whatever -->
         <div class="relative">
           <Icon name="lucide:user" class="absolute left-3 top-1/4 text-primary size-4" />
@@ -76,7 +76,6 @@ import { Icon } from 'astro-icon/components'
           <Icon name="lucide:send" class="size-4" />
           Submit
         </button>
-        <div class="mb-4" />
       </form>
 
       <script>
