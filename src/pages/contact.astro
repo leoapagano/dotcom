@@ -25,7 +25,7 @@ import { Icon } from 'astro-icon/components'
       <p class="mb-8" id="form-success"><b>Thank you for your submission! I'll get back to you as soon as I can.</b></p>
       <p class="mb-8" id="form-error"><b>Oops, something went wrong. Please try again. (Did you complete the Turnstile challenge?)</b></p>
 
-      <form class="" id="contactForm" method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="form-success" data-basin-error-id="form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
+      <form id="contactForm" method="POST" action="https://usebasin.com/f/85671cd868ac" enctype="multipart/form-data" data-basin-success-id="form-success" data-basin-error-id="form-error" data-basin-form data-basin-success-action='render' data-basin-spam-protection='turnstile' data-basin-turnstile-sitekey="0x4AAAAAAA5RE1I-uT71yDEi">
         <!-- The positioning we use for the icons here is very hacky but whatever -->
         <div class="relative">
           <Icon name="lucide:user" class="absolute left-3 top-1/4 text-primary size-4" />
@@ -72,7 +72,7 @@ import { Icon } from 'astro-icon/components'
             required
           ></textarea>
         </div>
-        <button class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')} type="submit">
+        <button class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group mb-4')} type="submit">
           <Icon name="lucide:send" class="size-4" />
           Submit
         </button>
@@ -82,7 +82,7 @@ import { Icon } from 'astro-icon/components'
         document.getElementById('contactForm')!.style.display = 'block';
       </script>
       <noscript>
-        <p class="mb-8" style="color: red;">This form requires a web browser with JavaScript enabled. Please enable JavaScript, reload, and try again.</p>
+        <p style="color: red;">This form requires a web browser with JavaScript enabled. Please enable JavaScript, reload, and try again.</p>
       </noscript>
     </div>
   </section>
@@ -133,8 +133,5 @@ import { Icon } from 'astro-icon/components'
 	#message {
 		resize: vertical;
     min-height: 36px;
-	}
-	.submit-button {
-		margin-bottom: 10px;
 	}
 </style>
