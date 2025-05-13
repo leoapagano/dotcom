@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets'
+import backgroundImage from '@/assets/background.png'
+---
+
+<div class="fixed inset-0 -z-10">
+	<Image
+		src={backgroundImage}
+		alt="Background"
+		class="h-full w-full object-cover"
+	/>
+</div>
