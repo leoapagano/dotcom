@@ -99,7 +99,7 @@
 		video,
 		figure,
 		.expressive-code {
-			@apply my-6;
+			@apply my-6 rounded-xl;
 		}
 
 		summary {
