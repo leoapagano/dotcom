@@ -28,7 +28,8 @@ import backgroundImage from '@/assets/background.png'
     <div class="flex h-fit min-h-screen flex-col font-sans md:gap-y-6">
       <Header />
       <main class="grow">
-        <div class="mx-auto flex grow flex-col gap-y-6 max-w-3xl p-4 md:rounded-2xl sm:p-6" style="background-color: var(--background); opacity: 0.90;">
+        <div class="relative mx-auto flex grow flex-col gap-y-6 max-w-3xl p-4 backdrop-blur-sm md:rounded-2xl sm:p-6">
+          <div class="absolute inset-0 md:rounded-2xl" style="background-color: var(--background); opacity: 0.8; z-index: -1;"></div>
           <slot />
         </div>
       </main>
