@@ -57,7 +57,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true,
+    "singleQuote": false,
+    "useTabs": true,
     "plugins": [
       "prettier-plugin-astro",
       "prettier-plugin-tailwindcss",
