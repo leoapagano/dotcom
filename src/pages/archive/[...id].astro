@@ -86,8 +86,6 @@ const { next, prev } = await getAdjacentPosts(currentPostId)
 					}
 				</div>
 			</div>
-
-			<PostNavigation prevPost={prev} nextPost={next} />
 		</section>
 
 		{headings.length > 0 && <TableOfContents headings={headings} />}
