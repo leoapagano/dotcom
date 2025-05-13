@@ -35,7 +35,7 @@ const { next, prev } = await getAdjacentPosts(currentPostId)
 		<div class="col-start-2">
 			<Breadcrumbs
 				items={[
-					{ href: "/blog", label: "Blog", icon: "lucide:archive" },
+					{ href: "/archive", label: "Archive", icon: "lucide:archive" },
 					{ label: post.data.title, icon: "lucide:file-text" },
 				]}
 			/>
@@ -47,7 +47,7 @@ const { next, prev } = await getAdjacentPosts(currentPostId)
 					alt={post.data.title}
 					width={1200}
 					height={630}
-					class="col-span-full mx-auto w-full max-w-5xl object-cover rounded-xl md:rounded-2xl"
+					class="col-span-full mx-auto w-full max-w-5xl rounded-xl object-cover md:rounded-2xl"
 				/>
 			)
 		}
