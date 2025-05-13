@@ -1,30 +1,36 @@
 ---
-import '@/styles/global.css'
-import '@/styles/typography.css'
+import "@/styles/global.css"
+import "@/styles/typography.css"
 
-import Background from '@/components/Background.astro'
-import Footer from '@/components/Footer.astro'
-import Head from '@/components/Head.astro'
-import Header from '@/components/Header.astro'
-import { SITE } from '@/consts'
+import Background from "@/components/Background.astro"
+import Footer from "@/components/Footer.astro"
+import Head from "@/components/Head.astro"
+import Header from "@/components/Header.astro"
+import { SITE } from "@/consts"
 ---
 
 <!doctype html>
 <html lang={SITE.locale}>
-  <Head>
-    <slot name="head" />
-  </Head>
-  <body>
-    <Background />
-    <div class="flex h-fit min-h-screen flex-col font-sans md:gap-y-6">
-      <Header />
-      <main class="grow">
-        <div class="relative flex grow flex-col gap-y-6 m-2 max-w-3xl md:m-auto p-4 backdrop-blur-sm sm:p-6">
-          <div class="absolute inset-0 rounded-xl md:rounded-2xl" style="background-color: var(--background); opacity: 0.8; z-index: -1;"></div>
-          <slot />
-        </div>
-      </main>
-      <Footer />
-    </div>
-  </body>
+	<Head>
+		<slot name="head" />
+	</Head>
+	<body>
+		<Background />
+		<div class="flex h-fit min-h-screen flex-col font-sans md:gap-y-6">
+			<Header />
+			<main class="grow">
+				<div
+					class="relative m-2 flex max-w-3xl grow flex-col gap-y-6 p-4 backdrop-blur-sm sm:p-6 md:m-auto"
+				>
+					<div
+						class="absolute inset-0 rounded-xl md:rounded-2xl"
+						style="background-color: var(--background); opacity: 0.8; z-index: -1;"
+					>
+					</div>
+					<slot />
+				</div>
+			</main>
+			<Footer />
+		</div>
+	</body>
 </html>

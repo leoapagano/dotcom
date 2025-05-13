@@ -1,17 +1,17 @@
 ---
-import { SOCIAL_LINKS } from '@/consts'
-import SocialIcons from './SocialIcons.astro'
+import { SOCIAL_LINKS } from "@/consts"
+import SocialIcons from "./SocialIcons.astro"
 ---
 
-<footer class="py-4 bg-background/50 sticky backdrop-blur-md">
-  <div
-    class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-y-2 px-4 sm:flex-row sm:justify-between"
-  >
-    <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
-      <span class="text-foreground/60 text-sm">
-        &copy; {new Date().getFullYear()} Leo Pagano | All rights reserved.
-      </span>
-    </div>
-    <SocialIcons links={SOCIAL_LINKS} />
-  </div>
+<footer class="bg-background/50 sticky py-4 backdrop-blur-md">
+	<div
+		class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-y-2 px-4 sm:flex-row sm:justify-between"
+	>
+		<div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
+			<span class="text-foreground/60 text-sm">
+				&copy; {new Date().getFullYear()} Leo Pagano | All rights reserved.
+			</span>
+		</div>
+		<SocialIcons links={SOCIAL_LINKS} />
+	</div>
 </footer>

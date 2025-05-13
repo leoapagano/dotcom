@@ -1,92 +1,150 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
-import Link from '@/components/Link.astro'
-import PageHead from '@/components/PageHead.astro'
-import { buttonVariants } from '@/components/ui/button'
-import { SITE } from '@/consts'
-import Layout from '@/layouts/Layout.astro'
-import { getRecentPosts } from '@/lib/data-utils'
+import BlogCard from "@/components/BlogCard.astro"
+import Link from "@/components/Link.astro"
+import PageHead from "@/components/PageHead.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { SITE } from "@/consts"
+import Layout from "@/layouts/Layout.astro"
+import { getRecentPosts } from "@/lib/data-utils"
 
-import { Image } from 'astro:assets'
-import headshot from '/src/assets/headshot.jpg'
+import { Image } from "astro:assets"
+import headshot from "/src/assets/headshot.jpg"
 
 const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
 <Layout>
-  <PageHead slot="head" title="Home" />
+	<PageHead slot="head" title="Home" />
 
-  <!-- Site info/introduction -->
-  <section id="introduction">
-    <div class="flex flex-col space-y-1.5">
-      <h1 class="text-5xl leading-none">Hi! I'm Leo.</h1>
-    </div>
-    <div class="my-6 pt-0">
-      <div class="pt-0 flex flex-col md:flex-row md:items-start md:space-x-6">
-        <div class="flex-1">
-          <Image src={headshot} alt="Leo's headshot" class="w-32 h-32 rounded-lg mb-4 md:mb-0 md:ml-auto md:order-last" />
-          <h3 class="mb-2 text-3xl">About Me</h3>
-          <p class="text-muted-foreground mb-2">I'm currently a rising junior at the University of Connecticut studying Computer Science and Engineering.</p>
-          <p class="text-muted-foreground mb-2">While you're here, check out some of the <Link href="/portfolio" class="text-foreground" underline>projects</Link> or <Link href="/blog" class="text-foreground" underline>blog posts</Link> I've made. Many of these projects are open source and have been uploaded to <Link href="https://github.com/leoapagano" class="text-foreground" external underline>my GitHub page</Link>.</p>
-          <p class="text-muted-foreground mb-2">I encourage you to reach out to me <Link href="/contact" class="text-foreground" underline>here</Link> or via <Link href="https://linkedin.com/in/leoapagano" class="text-foreground" external underline>LinkedIn</Link>.</p>
-        </div>
-      </div>
+	<!-- Site info/introduction -->
+	<section id="introduction">
+		<div class="flex flex-col space-y-1.5">
+			<h1 class="text-5xl leading-none">Hi! I'm Leo.</h1>
+		</div>
+		<div class="my-6 pt-0">
+			<div class="flex flex-col pt-0 md:flex-row md:items-start md:space-x-6">
+				<div class="flex-1">
+					<Image
+						src={headshot}
+						alt="Leo's headshot"
+						class="mb-4 h-32 w-32 rounded-lg md:order-last md:mb-0 md:ml-auto"
+					/>
+					<h3 class="mb-2 text-3xl">About Me</h3>
+					<p class="text-muted-foreground mb-2">
+						I'm currently a rising junior at the University of Connecticut
+						studying Computer Science and Engineering.
+					</p>
+					<p class="text-muted-foreground mb-2">
+						While you're here, check out some of the <Link
+							href="/portfolio"
+							class="text-foreground"
+							underline>projects</Link
+						> or <Link href="/blog" class="text-foreground" underline
+							>blog posts</Link
+						> I've made. Many of these projects are open source and have been uploaded
+						to <Link
+							href="https://github.com/leoapagano"
+							class="text-foreground"
+							external
+							underline>my GitHub page</Link
+						>.
+					</p>
+					<p class="text-muted-foreground mb-2">
+						I encourage you to reach out to me <Link
+							href="/contact"
+							class="text-foreground"
+							underline>here</Link
+						> or via <Link
+							href="https://linkedin.com/in/leoapagano"
+							class="text-foreground"
+							external
+							underline>LinkedIn</Link
+						>.
+					</p>
+				</div>
+			</div>
 
-      <h3 class="my-4 mb-2 text-3xl">Currently...</h3>
-      <ul class="text-muted-foreground">
-        <li>I recently interned for a UConn Senior Design project designing a custom OS from scratch for the Raspberry Pi, to be used to teach OS development.</li>
-        <li>I recently served as a Floor Mentor for the <Link href="https://undergrad.engr.uconn.edu/current-students-activities-organizations/engineering-living-learning-communities/engineering-house-learning-community/" class="text-foreground" external underline>Engineering House Learning Community</Link>.</li>
-        <li>I'm working on <Link href="https://github.com/leoapagano/tb3k" class="text-foreground" external underline>tb3k</Link> - a Discord bot I wrote to keep track of my friends' birthdays and events.</li>
-        <li>I'm working on PQRS - a self-hosted, all-in-one NAS, unattended backup, and Linux VM server, based on Proxmox.</li>
-        <li>I'm working on a custom CPU designed from scratch to be (somewhat) RISC-V compliant.</li>
-        <li>I'm working on a tool to mount Ext4 volumes on Macs, with UX that improves upon what is currently available in similar tools.</li>
-      </ul>
-    </div>
-  </section>
+			<h3 class="my-4 mb-2 text-3xl">Currently...</h3>
+			<ul class="text-muted-foreground">
+				<li>
+					I recently interned for a UConn Senior Design project designing a
+					custom OS from scratch for the Raspberry Pi, to be used to teach OS
+					development.
+				</li>
+				<li>
+					I recently served as a Floor Mentor for the <Link
+						href="https://undergrad.engr.uconn.edu/current-students-activities-organizations/engineering-living-learning-communities/engineering-house-learning-community/"
+						class="text-foreground"
+						external
+						underline>Engineering House Learning Community</Link
+					>.
+				</li>
+				<li>
+					I'm working on <Link
+						href="https://github.com/leoapagano/tb3k"
+						class="text-foreground"
+						external
+						underline>tb3k</Link
+					> - a Discord bot I wrote to keep track of my friends' birthdays and events.
+				</li>
+				<li>
+					I'm working on PQRS - a self-hosted, all-in-one NAS, unattended
+					backup, and Linux VM server, based on Proxmox.
+				</li>
+				<li>
+					I'm working on a custom CPU designed from scratch to be (somewhat)
+					RISC-V compliant.
+				</li>
+				<li>
+					I'm working on a tool to mount Ext4 volumes on Macs, with UX that
+					improves upon what is currently available in similar tools.
+				</li>
+			</ul>
+		</div>
+	</section>
 
-  <!-- Blog highlights -->
-  <section class="flex flex-col gap-y-2">
-    <h3 class="mb-2 text-3xl">Latest Posts</h3>
-    <ul class="flex flex-col gap-y-4">
-      {
-        blog.map((post) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex justify-center">
-      <Link
-        href="/blog"
-        class={buttonVariants({ variant: 'ghost' }) + ' group'}
-      >
-        See all posts <span
-          class="ml-1.5 transition-transform group-hover:translate-x-1"
-          >&rarr;</span
-        >
-      </Link>
-    </div>
-  </section>
+	<!-- Blog highlights -->
+	<section class="flex flex-col gap-y-2">
+		<h3 class="mb-2 text-3xl">Latest Posts</h3>
+		<ul class="flex flex-col gap-y-4">
+			{
+				blog.map((post) => (
+					<li>
+						<BlogCard entry={post} />
+					</li>
+				))
+			}
+		</ul>
+		<div class="flex justify-center">
+			<Link
+				href="/blog"
+				class={buttonVariants({ variant: "ghost" }) + " group"}
+			>
+				See all posts <span
+					class="ml-1.5 transition-transform group-hover:translate-x-1"
+					>&rarr;</span
+				>
+			</Link>
+		</div>
+	</section>
 </Layout>
 
-
 <style>
-  /* Star-bulleted list */
-  #introduction li {
-    position: relative;
-    padding-left: 24px;
-    margin-bottom: 2px;
-  }
-  #introduction li::before {
-    content: "★";
-    position: absolute;
-    left: 0;
-  }
+	/* Star-bulleted list */
+	#introduction li {
+		position: relative;
+		padding-left: 24px;
+		margin-bottom: 2px;
+	}
+	#introduction li::before {
+		content: "★";
+		position: absolute;
+		left: 0;
+	}
 
-  /* Headshot */
-  #introduction img {
-    float: right;
-    margin-left: 1rem;
-  }
+	/* Headshot */
+	#introduction img {
+		float: right;
+		margin-left: 1rem;
+	}
 </style>

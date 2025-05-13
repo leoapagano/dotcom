@@ -1,16 +1,16 @@
 ---
-import { SITE } from '@/consts'
-import type { CollectionEntry } from 'astro:content'
+import { SITE } from "@/consts"
+import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  post: CollectionEntry<'blog'>
+	post: CollectionEntry<"blog">
 }
 
 const { post } = Astro.props
 
 const title = post.data.title || SITE.title
 const description = post.data.description || SITE.description
-const image = new URL('/static/1200x630.png', Astro.site)
+const image = new URL("/static/1200x630.png", Astro.site)
 ---
 
 <title>{`${title} | ${SITE.title}`}</title>
@@ -21,8 +21,8 @@ const image = new URL('/static/1200x630.png', Astro.site)
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta
-  property="og:image"
-  content={`${SITE.href}${post?.data?.image?.src}` || image}
+	property="og:image"
+	content={`${SITE.href}${post?.data?.image?.src}` || image}
 />
 <meta property="og:image:alt" content={title} />
 <meta property="og:type" content="website" />
@@ -33,15 +33,15 @@ const image = new URL('/static/1200x630.png', Astro.site)
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta
-  property="twitter:image"
-  content={`${SITE.href}${post?.data?.image?.src}` || image}
+	property="twitter:image"
+	content={`${SITE.href}${post?.data?.image?.src}` || image}
 />
 <meta name="twitter:image:alt" content={title} />
 <meta name="twitter:card" content="summary_large_image" />
 
 {
-  post?.data.tags &&
-    post.data.tags.map((tag: string) => {
-      return <meta property="article:tag" content={tag} />
-    })
+	post?.data.tags &&
+		post.data.tags.map((tag: string) => {
+			return <meta property="article:tag" content={tag} />
+		})
 }

@@ -1,23 +1,23 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
-import Breadcrumbs from '@/components/Breadcrumbs.astro'
-import Link from '@/components/Link.astro'
-import PageHead from '@/components/PageHead.astro'
-import { badgeVariants } from '@/components/ui/badge'
-import PaginationComponent from '@/components/ui/pagination'
-import { SITE } from '@/consts'
-import Layout from '@/layouts/Layout.astro'
-import { getAllPosts, getSortedTags, groupPostsByYear } from '@/lib/data-utils'
-import { Icon } from 'astro-icon/components'
-import type { PaginateFunction } from 'astro'
+import BlogCard from "@/components/BlogCard.astro"
+import Breadcrumbs from "@/components/Breadcrumbs.astro"
+import Link from "@/components/Link.astro"
+import PageHead from "@/components/PageHead.astro"
+import { badgeVariants } from "@/components/ui/badge"
+import PaginationComponent from "@/components/ui/pagination"
+import { SITE } from "@/consts"
+import Layout from "@/layouts/Layout.astro"
+import { getAllPosts, getSortedTags, groupPostsByYear } from "@/lib/data-utils"
+import type { PaginateFunction } from "astro"
+import { Icon } from "astro-icon/components"
 
 export async function getStaticPaths({
-  paginate,
+	paginate,
 }: {
-  paginate: PaginateFunction
+	paginate: PaginateFunction
 }) {
-  const allPosts = await getAllPosts()
-  return paginate(allPosts, { pageSize: SITE.postsPerPage })
+	const allPosts = await getAllPosts()
+	return paginate(allPosts, { pageSize: SITE.postsPerPage })
 }
 
 const { page } = Astro.props
@@ -29,55 +29,55 @@ const sortedTags = await getSortedTags()
 ---
 
 <Layout>
-  <PageHead slot="head" title="Blog" />
-  <Breadcrumbs
-    items={[
-      { label: 'Blog', href: '/blog', icon: 'lucide:archive' },
-      { label: `Page ${page.currentPage}`, icon: 'lucide:folder-open' },
-    ]}
-  />
-  <h2 class="text-4xl">Blog</h2>
-  <h3 class="text-3xl">All Tags</h3>
-  <div class="flex flex-col gap-4">
-    <div class="flex flex-wrap gap-2">
-      {
-        sortedTags.map(({ tag, count }) => (
-          <Link
-            href={`/tags/${tag}`}
-            class={badgeVariants({ variant: 'secondary' })}
-          >
-            <Icon name="lucide:hash" class="size-3" />
-            {tag}
-            <span class="text-muted-foreground ml-1.5">({count})</span>
-          </Link>
-        ))
-      }
-    </div>
-  </div>
+	<PageHead slot="head" title="Blog" />
+	<Breadcrumbs
+		items={[
+			{ label: "Blog", href: "/blog", icon: "lucide:archive" },
+			{ label: `Page ${page.currentPage}`, icon: "lucide:folder-open" },
+		]}
+	/>
+	<h2 class="text-4xl">Blog</h2>
+	<h3 class="text-3xl">All Tags</h3>
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-wrap gap-2">
+			{
+				sortedTags.map(({ tag, count }) => (
+					<Link
+						href={`/tags/${tag}`}
+						class={badgeVariants({ variant: "secondary" })}
+					>
+						<Icon name="lucide:hash" class="size-3" />
+						{tag}
+						<span class="text-muted-foreground ml-1.5">({count})</span>
+					</Link>
+				))
+			}
+		</div>
+	</div>
 
-  <h3 class="text-3xl leading-none">Posts By Year</h3>
+	<h3 class="text-3xl leading-none">Posts By Year</h3>
 
-  <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
-    {
-      years.map((year) => (
-        <section class="flex flex-col gap-y-4">
-          <h4 class="text-2xl">{year}</h4>
-          <ul class="flex flex-col gap-4">
-            {postsByYear[year].map((post) => (
-              <li>
-                <BlogCard entry={post} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-  </div>
+	<div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
+		{
+			years.map((year) => (
+				<section class="flex flex-col gap-y-4">
+					<h4 class="text-2xl">{year}</h4>
+					<ul class="flex flex-col gap-4">
+						{postsByYear[year].map((post) => (
+							<li>
+								<BlogCard entry={post} />
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</div>
 
-  <PaginationComponent
-    currentPage={page.currentPage}
-    totalPages={page.lastPage}
-    baseUrl="/blog/"
-    client:load
-  />
+	<PaginationComponent
+		currentPage={page.currentPage}
+		totalPages={page.lastPage}
+		baseUrl="/blog/"
+		client:load
+	/>
 </Layout>

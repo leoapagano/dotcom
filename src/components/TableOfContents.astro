@@ -1,103 +1,97 @@
 ---
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { cn } from '@/lib/utils'
-import type { MarkdownHeading } from 'astro'
-import { Icon } from 'astro-icon/components'
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { cn } from "@/lib/utils"
+import type { MarkdownHeading } from "astro"
+import { Icon } from "astro-icon/components"
 
 type Props = {
-  headings: MarkdownHeading[]
+	headings: MarkdownHeading[]
 }
 
 const { headings } = Astro.props
 
 function getHeadingMargin(depth: number): string {
-  const margins: Record<number, string> = {
-    3: 'ml-4',
-    4: 'ml-8',
-    5: 'ml-12',
-    6: 'ml-16',
-  }
-  return margins[depth] || ''
+	const margins: Record<number, string> = {
+		3: "ml-4",
+		4: "ml-8",
+		5: "ml-12",
+		6: "ml-16",
+	}
+	return margins[depth] || ""
 }
 ---
 
-<details
-  open
-  class="group col-start-2 rounded-xl border p-4"
->
-  <summary
-    class="flex cursor-pointer items-center justify-between text-xl font-medium group-open:pb-4"
-  >
-    <span>Table of Contents</span>
-    <Icon
-      name="lucide:chevron-down"
-      class="size-5 shrink-0 transition-transform group-open:rotate-180"
-    />
-  </summary>
+<details open class="group col-start-2 rounded-xl border p-4">
+	<summary
+		class="flex cursor-pointer items-center justify-between text-xl font-medium group-open:pb-4"
+	>
+		<span>Table of Contents</span>
+		<Icon
+			name="lucide:chevron-down"
+			class="size-5 shrink-0 transition-transform group-open:rotate-180"
+		/>
+	</summary>
 
-  <ScrollArea
-    client:load
-    className="flex max-h-64 flex-col overflow-y-auto"
-    type="always"
-  >
-    <ul
-      class="flex list-none flex-col gap-y-2 px-4"
-      id="table-of-contents"
-    >
-      <li class="hidden text-lg font-medium">Table of Contents</li>
-      {
-        headings.map((heading) => (
-          <li
-            class={cn(
-              'text-foreground/60 px-4 text-sm',
-              getHeadingMargin(heading.depth),
-            )}
-          >
-            <a
-              href={`#${heading.slug}`}
-              class="marker:text-foreground/30 list-item list-disc underline decoration-transparent underline-offset-[3px] transition-colors duration-200 hover:decoration-inherit"
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </ScrollArea>
+	<ScrollArea
+		client:load
+		className="flex max-h-64 flex-col overflow-y-auto"
+		type="always"
+	>
+		<ul class="flex list-none flex-col gap-y-2 px-4" id="table-of-contents">
+			<li class="hidden text-lg font-medium">Table of Contents</li>
+			{
+				headings.map((heading) => (
+					<li
+						class={cn(
+							"text-foreground/60 px-4 text-sm",
+							getHeadingMargin(heading.depth),
+						)}
+					>
+						<a
+							href={`#${heading.slug}`}
+							class="marker:text-foreground/30 list-item list-disc underline decoration-transparent underline-offset-[3px] transition-colors duration-200 hover:decoration-inherit"
+						>
+							{heading.text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</ScrollArea>
 </details>
 
 <script>
-  function setupToc() {
-    const header = document.querySelector('header')
-    const headerHeight = header ? header.offsetHeight : 0
+	function setupToc() {
+		const header = document.querySelector("header")
+		const headerHeight = header ? header.offsetHeight : 0
 
-    const observer = new IntersectionObserver(
-      (sections) => {
-        sections.forEach((section) => {
-          const heading = section.target.querySelector('h2, h3, h4, h5, h6')
-          if (!heading) return
+		const observer = new IntersectionObserver(
+			(sections) => {
+				sections.forEach((section) => {
+					const heading = section.target.querySelector("h2, h3, h4, h5, h6")
+					if (!heading) return
 
-          const id = heading.getAttribute('id')
-          const link = document.querySelector(
-            `#table-of-contents li a[href="#${id}"]`,
-          )
-          if (!link) return
+					const id = heading.getAttribute("id")
+					const link = document.querySelector(
+						`#table-of-contents li a[href="#${id}"]`,
+					)
+					if (!link) return
 
-          const addRemove = section.isIntersecting ? 'add' : 'remove'
-          link.classList[addRemove]('text-foreground')
-        })
-      },
-      {
-        rootMargin: `-${headerHeight}px 0px 0px 0px`,
-      },
-    )
+					const addRemove = section.isIntersecting ? "add" : "remove"
+					link.classList[addRemove]("text-foreground")
+				})
+			},
+			{
+				rootMargin: `-${headerHeight}px 0px 0px 0px`,
+			},
+		)
 
-    const sections = document.querySelectorAll('.prose section')
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-  }
+		const sections = document.querySelectorAll(".prose section")
+		sections.forEach((section) => {
+			observer.observe(section)
+		})
+	}
 
-  document.addEventListener('astro:page-load', setupToc)
-  document.addEventListener('astro:after-swap', setupToc)
+	document.addEventListener("astro:page-load", setupToc)
+	document.addEventListener("astro:after-swap", setupToc)
 </script>
