@@ -31,15 +31,6 @@ export async function getAdjacentPosts(currentId: string): Promise<{
   }
 }
 
-export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
-  const projects = await getCollection('projects')
-  return projects.sort((a, b) => {
-    const dateA = a.data.startDate?.getTime() || 0
-    const dateB = b.data.startDate?.getTime() || 0
-    return dateB - dateA
-  })
-}
-
 export async function getAllTags(): Promise<Map<string, number>> {
   const posts = await getAllPosts()
 
@@ -82,4 +73,69 @@ export async function getPostsByTag(
 ): Promise<CollectionEntry<'blog'>[]> {
   const posts = await getAllPosts()
   return posts.filter((post) => post.data.tags?.includes(tag))
+}
+
+export async function getAllProjects(): Promise<CollectionEntry<"portfolio">[]> {
+    return await getCollection("portfolio")
+}
+
+export async function getSortedTools(): Promise<{ tool: string; count: number }[]> {
+    const projects = await getAllProjects()
+    const toolCounts: Record<string, number> = {}
+
+    projects.forEach((project) => {
+        (project.data.tools || []).forEach((tool) => {
+            toolCounts[tool] = (toolCounts[tool] || 0) + 1
+        })
+    })
+
+    return Object.entries(toolCounts)
+        .map(([tool, count]) => ({ tool, count }))
+        .sort((a, b) => {
+            // Sort by count (descending)
+            if (b.count !== a.count) {
+                return b.count - a.count
+            }
+            // If counts are equal, sort alphabetically (ascending)
+            return a.tool.localeCompare(b.tool)
+        })
+}
+
+export function sortProjects(projects: CollectionEntry<"portfolio">[]): CollectionEntry<"portfolio">[] {
+  return projects.sort((a, b) => {
+    const endDateA = a.data.endDate ? new Date(a.data.endDate) : new Date()
+    const endDateB = b.data.endDate ? new Date(b.data.endDate) : new Date()
+
+    // Compare by endDate (descending)
+    const endDateComparison = endDateB.getTime() - endDateA.getTime()
+    if (endDateComparison !== 0) {
+      return endDateComparison
+    }
+
+    // If endDates are equal, compare by startDate (ascending)
+    const startDateA = new Date(a.data.startDate)
+    const startDateB = new Date(b.data.startDate)
+    return startDateB.getTime() - startDateA.getTime()
+  })
+}
+
+export function getProjectsByTool(
+  projects: CollectionEntry<"portfolio">[],
+): Record<string, CollectionEntry<"portfolio">[]> {
+  const grouped: Record<string, CollectionEntry<"portfolio">[]> = {}
+
+  // Group projects by tools
+  projects.forEach((project) => {
+    (project.data.tools || []).forEach((tool) => {
+      if (!grouped[tool]) grouped[tool] = []
+      grouped[tool].push(project)
+    })
+  })
+
+  // Sort projects within each tool group
+  Object.keys(grouped).forEach((tool) => {
+    grouped[tool] = sortProjects(grouped[tool])
+  })
+
+  return grouped
 }

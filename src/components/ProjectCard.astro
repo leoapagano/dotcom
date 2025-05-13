@@ -7,7 +7,7 @@ import { Image } from "astro:assets"
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-	project: CollectionEntry<"projects">
+	project: CollectionEntry<"portfolio">
 }
 
 const { project } = Astro.props
@@ -57,10 +57,13 @@ const { project } = Astro.props
 				)
 			}
 			{
-				project.data.tags && (
+				project.data.tools && (
 					<div class="flex flex-wrap gap-2">
-						{project.data.tags.map((tag: string) => (
-							<Badge variant="secondary">{tag}</Badge>
+						{project.data.tools.map((tag: string) => (
+							<Badge variant="secondary">
+								<Icon name="lucide:wrench" class="size-3" />
+								{tag}
+							</Badge>
 						))}
 					</div>
 				)

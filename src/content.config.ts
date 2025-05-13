@@ -14,18 +14,18 @@ const blog = defineCollection({
 		}),
 })
 
-const projects = defineCollection({
-	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
+const portfolio = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/portfolio" }),
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
 			description: z.string(),
-			tags: z.array(z.string()),
-			image: image(),
-			link: z.string().url(),
-			startDate: z.coerce.date().optional(),
+			tools: z.array(z.string()).optional(),
+			image: image().optional(),
+			link: z.string().url().optional(),
+			startDate: z.coerce.date(),
 			endDate: z.coerce.date().optional(),
 		}),
 })
 
-export const collections = { blog, projects }
+export const collections = { blog, portfolio }

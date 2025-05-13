@@ -171,8 +171,8 @@ Add projects in `src/content/projects/` as Markdown files:
 ---
 name: 'Project A'
 description: 'This is an example project description! You should replace this with a description of your own project.'
-tags: ['Framework A', 'Library B', 'Tool C', 'Resource D']
-image: '/static/1200x630.png'
+tools: ['Framework A', 'Library B', 'Tool C', 'Resource D']
+image: './1200x630.png'
 link: 'https://example.com'
 startDate: '2024-01-01'
 endDate: '2024-01-01'
@@ -185,9 +185,9 @@ The project schema is defined as follows:
 | ------------- | --------------- | --------------------------------------- | -------- |
 | `name`        | `string`        | n/a                                     | Yes      |
 | `description` | `string`        | n/a                                     | Yes      |
-| `tags`        | `string[]`      | n/a                                     | Yes      |
-| `image`       | `image()`       | Should be exactly 1200px &times; 630px. | Yes      |
-| `link`        | `string.url()`  | Must be a valid URL.                    | Yes      |
+| `tags`        | `string[]`      | n/a                                     | Optional |
+| `image`       | `image()`       | Should be exactly 1200px &times; 630px. | Optional |
+| `link`        | `string.url()`  | Must be a valid URL.                    | Optional |
 | `startDate`   | `coerce.date()` | Must be in `YYYY-MM-DD` format.         | Optional |
 | `endDate`     | `coerce.date()` | Must be in `YYYY-MM-DD` format.         | Optional |
 
