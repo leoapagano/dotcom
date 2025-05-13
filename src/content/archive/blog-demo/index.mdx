@@ -1,0 +1,152 @@
+---
+title: 'Blog Demonstration'
+description: 'An outline of various features supported by this blog'
+date: 2025-05-13
+tags: ['webdev', 'meta']
+image: './banner.jpg'
+draft: false
+---
+
+import Callout from '@/components/Callout.astro'
+import { Icon } from 'astro-icon/components'
+
+# Markdown Basics
+
+## Body text
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Headings
+
+# The quick brown fox jumped over the lazy dog.
+
+## The quick brown fox jumped over the lazy dog.
+
+### The quick brown fox jumped over the lazy dog.
+
+#### The quick brown fox jumped over the lazy dog.
+
+##### The quick brown fox jumped over the lazy dog.
+
+###### The quick brown fox jumped over the lazy dog.
+
+Headings appear in the Table of Contents for that blog post.
+
+## Formatting
+
+This text is **bold**. This text is *italic*. Note: Markdown reserves underlining for links, so you can't underline text otherwise.
+
+## Blockquotes
+
+> This is a blockquote.
+>
+> > This is a nested blockquote.
+
+## Lists
+
+### Unordered Lists
+- Unordered list items...
+  - ...can be made with (*)
+  - ...or with (-)
+- But don't mix and match in the same list.
+
+### Ordered Lists
+1. 1st ordered list item
+2. 2nd ordered list item
+3. 3rd ordered list item
+
+## Links
+
+Markdown supports [links](https://leoapagano.com "Loooook it even has a tooltip, omg"), too.
+
+# Rich Markdown Content
+
+## Code
+
+Code can be written inline, i.e. `getState()`, or in blocks, where you can (with MDX) do any of the following;
+- Declare a language used, to provide color to the code
+- Collapse verbose lines of code, allowing them to be made visible with a click of a button
+- (Optionally) show line numbers
+- Highlight certain important line(s) of code
+- And more!
+
+```ts title="src/lib/data-utils.ts" collapse={4-7} {1}
+import { getCollection, type CollectionEntry } from 'astro:content'
+
+export async function getAllPosts(): Promise<CollectionEntry<'blog'>[]> {
+  const posts = await getCollection('blog')
+  return posts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+}
+```
+
+## Math
+
+Much like code, math can also be written inline; $A = \pi r^2$, or in blocks:
+
+$$
+f(x) = \sum^{\infty}_{n=0} f^{(n)}(a) \frac{(x-a)^n}{n!}
+$$
+
+## Images
+
+You can embed images in Markdown:
+
+![Dramatic sky pic](dramatic-sky.jpeg)
+
+## Videos
+
+I do not recommend adding video files to the source tree (or in Markdown) due to their sheer size. Instead, I recommend using YouTube or a similar hosting service. YouTube videos can be embedded by copying the HTML embed code directly into the MDX file. If given `width` and `height` parameters in your `<iframe>`, replace them with `class="w-full aspect-video"` to ensure they do not overflow on small screens.
+
+<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+# MDX Components
+
+## Callouts
+
+Place these at the top of the MDX file:
+```mdx title="index.mdx" showLineNumbers=false
+import Callout from '@/components/Callout.astro'
+import { Icon } from 'astro-icon/components'
+```
+
+Then, use the `<Callout>` tag:
+
+<Callout title="An important callout" variant="important">
+  Look! This text is inside a callout!
+  You can do ordinary Markdown stuff, like math... 
+  $$
+  x = \frac{-b \pm \sqrt{ b^2-4ac }}{2a}
+  $$
+  ...or code...
+  ```python
+  import csv
+  import hashlib
+  import random
+  import shutil
+  import subprocess
+  import time
+  import uuid
+  from pathlib import Path
+  ```
+</Callout>
+
+Several types of callouts exist. These include, but are not limited to:
+
+<div class="[&_td]:align-middle">
+| Variant | Usage |
+| ------- | ----- |
+| <span class="flex items-center gap-2 border-blue-500 dark:bg-blue-950/10 text-blue-700 dark:text-blue-300 px-2 py-1 border-l-4"><Icon name="lucide:info" /> Note</span> | For general information or comments that don't fit other categories |
+| <span class="flex items-center gap-2 border-green-500 dark:bg-green-950/10 text-green-700 dark:text-green-300 px-2 py-1 border-l-4"><Icon name="lucide:lightbulb" /> Tip</span> | For helpful advice or shortcuts related to the topic at hand |
+| <span class="flex items-center gap-2 border-amber-500 dark:bg-amber-950/10 text-amber-700 dark:text-amber-300 px-2 py-1 border-l-4"><Icon name="lucide:alert-triangle" /> Warning</span> | For potential pitfalls or common misconceptions |
+| <span class="flex items-center gap-2 border-red-500 dark:bg-red-950/10 text-red-700 dark:text-red-300 px-2 py-1 border-l-4"><Icon name="lucide:shield-alert" /> Danger</span> | For things that could potentially be destructive or harmful |
+| <span class="flex items-center gap-2 border-purple-500 dark:bg-purple-950/10 text-purple-700 dark:text-purple-300 px-2 py-1 border-l-4"><Icon name="lucide:message-square-warning" /> Important</span> | For things that are important to the reader's understanding |
+</div>
+
+A full list of these callouts can be seen in the `Callout.astro` file.
+
+## Keyboard Keys
+
+You can add keyboard keys that look like real keys using the `<kbd>` tag. For example, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>.
+
