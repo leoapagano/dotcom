@@ -129,9 +129,6 @@ import { Icon } from "astro-icon/components"
 				</button>
 			</form>
 
-			<script>
-				document.getElementById("contactForm")!.style.display = "block"
-			</script>
 			<noscript>
 				<p style="color: red;">
 					This form requires a web browser with JavaScript enabled. Please
@@ -143,20 +140,13 @@ import { Icon } from "astro-icon/components"
 </Layout>
 
 <script>
-	function showForm() {
-		const form = document.getElementById("contactForm")
-		if (form) {
-			form.style.display = "block" // Show the form when JS is enabled
-		}
-	}
-
-	// Handle initial page load
-	document.addEventListener("DOMContentLoaded", showForm)
+	// Unhide contact form
+	document.getElementById("contactForm")!.style.display = "block"
 
 	// Handle navigation to this page
 	document.addEventListener("astro:after-swap", () => {
-		if (window.location.pathname === "/contact") {
-			showForm()
+		if (["/contact", "/contact/"].includes(window.location.pathname)) {
+			window.location.reload()
 		}
 	})
 </script>
