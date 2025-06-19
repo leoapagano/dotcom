@@ -1,6 +1,7 @@
 ---
 import Link from "@/components/Link.astro"
 import { Badge } from "@/components/ui/badge"
+import { TOOLS_ICON_MAP } from "@/consts"
 import { formatDate } from "@/lib/utils"
 import { Icon } from "astro-icon/components"
 import { Image } from "astro:assets"
@@ -61,7 +62,10 @@ const { project } = Astro.props
 					<div class="flex flex-wrap gap-2">
 						{project.data.tools.map((tag: string) => (
 							<Badge variant="secondary">
-								<Icon name="lucide:wrench" class="size-3" />
+								<Icon
+									name={TOOLS_ICON_MAP[tag] || `lucide:wrench`}
+									class="size-3"
+								/>
 								{tag}
 							</Badge>
 						))}

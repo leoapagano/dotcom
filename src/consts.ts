@@ -48,3 +48,17 @@ export const ICON_MAP: IconMap = {
 	Email: "lucide:mail",
 	RSS: "lucide:rss",
 }
+
+export const TOOLS_ICON_MAP: IconMap = {
+	Astro: "simple-icons:astro",
+	Bash: "simple-icons:gnubash",
+	CSS: "simple-icons:css3",
+	"GitHub Actions": "simple-icons:github",
+	JavaScript: "simple-icons:javascript",
+	Linux: "simple-icons:linux",
+	OOP: "lucide:layers",
+	Python: "simple-icons:python",
+	React: "simple-icons:react",
+	TailwindCSS: "simple-icons:tailwindcss",
+	TypeScript: "simple-icons:typescript",
+}

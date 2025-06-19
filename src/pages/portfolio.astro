@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro"
 import PageHead from "@/components/PageHead.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import { badgeVariants } from "@/components/ui/badge"
+import { TOOLS_ICON_MAP } from "@/consts"
 import Layout from "@/layouts/Layout.astro"
 import { getAllProjects, getSortedTools, sortProjects } from "@/lib/data-utils"
 import { Icon } from "astro-icon/components"
@@ -26,7 +27,7 @@ const allProjects = await sortProjects(await getAllProjects())
 					href={`/tools/${tool}`}
 					class={badgeVariants({ variant: "secondary" })}
 				>
-					<Icon name="lucide:wrench" class="size-3" />
+					<Icon name={TOOLS_ICON_MAP[tool] || `lucide:wrench`} class="size-3" />
 					{tool}
 					<span class="text-muted-foreground ml-1.5">({count})</span>
 				</a>
