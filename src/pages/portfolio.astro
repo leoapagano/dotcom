@@ -9,7 +9,7 @@ import { getAllProjects, getSortedTools, sortProjects } from "@/lib/data-utils"
 import { Icon } from "astro-icon/components"
 
 const sortedTools = await getSortedTools()
-const allProjects = await sortProjects(await getAllProjects())
+const allProjects = sortProjects(await getAllProjects())
 ---
 
 <Layout>
