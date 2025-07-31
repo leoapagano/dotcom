@@ -72,6 +72,7 @@ export default defineConfig({
     icon(),
   ],
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss()],
   },
   server: {
