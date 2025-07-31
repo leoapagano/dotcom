@@ -176,6 +176,7 @@ image: './1200x630.png'
 link: 'https://example.com'
 startDate: '2024-01-01'
 endDate: '2024-01-01'
+pinned: true
 ---
 ```
 
@@ -190,6 +191,7 @@ The project schema is defined as follows:
 | `link`        | `string.url()`  | Must be a valid URL.                    | Optional |
 | `startDate`   | `coerce.date()` | Must be in `YYYY-MM-DD` format.         | Optional |
 | `endDate`     | `coerce.date()` | Must be in `YYYY-MM-DD` format.         | Optional |
+| `pinned`      | `boolean`       | If not specified, defaults to false.    | Optional |
 
 ## License
 

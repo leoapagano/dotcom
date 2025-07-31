@@ -25,6 +25,7 @@ const portfolio = defineCollection({
 			link: z.string().url().optional(),
 			startDate: z.coerce.date(),
 			endDate: z.coerce.date().optional(),
+			pinned: z.boolean().optional(),
 		}),
 })
 

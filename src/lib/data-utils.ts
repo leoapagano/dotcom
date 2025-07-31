@@ -101,8 +101,15 @@ export async function getSortedTools(): Promise<{ tool: string; count: number }[
         })
 }
 
-export function sortProjects(projects: CollectionEntry<"portfolio">[]): CollectionEntry<"portfolio">[] {
-  return projects.sort((a, b) => {
+export function sortProjects(projects: CollectionEntry<"portfolio">[], pinned?: boolean): CollectionEntry<"portfolio">[] {
+  let filteredProjects = projects
+  
+  // Filter by pinned status if parameter is provided
+  if (pinned !== undefined) {
+    filteredProjects = projects.filter(project => (project.data.pinned || false) === pinned)
+  }
+  
+  return filteredProjects.sort((a, b) => {
     const endDateA = a.data.endDate ? new Date(a.data.endDate) : new Date()
     const endDateB = b.data.endDate ? new Date(b.data.endDate) : new Date()
 
