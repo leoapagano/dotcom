@@ -30,12 +30,20 @@ const sortedTags = await getSortedTags()
 
 <Layout>
 	<PageHead slot="head" title="Archive" />
-	<Breadcrumbs
-		items={[
-			{ label: "Archive", href: "/archive", icon: "lucide:archive" },
-			{ label: `Page ${page.currentPage}`, icon: "lucide:folder-open" },
-		]}
-	/>
+	{page.currentPage == 1 ? (
+		<Breadcrumbs
+			items={[
+				{ label: "Archive", href: "/archive", icon: "lucide:archive" },
+			]}
+		/>
+	) : (
+		<Breadcrumbs
+			items={[
+				{ label: "Archive", href: "/archive", icon: "lucide:archive" },
+				{ label: `Page ${page.currentPage}`, icon: "lucide:folder-open" },
+			]}
+		/>
+	)}
 	<h2 class="text-4xl">All Posts</h2>
 	<h3 class="text-3xl">By Tag</h3>
 	<div class="flex flex-col gap-4">
