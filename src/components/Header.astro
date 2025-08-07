@@ -2,27 +2,29 @@
 import Link from "@/components/Link.astro"
 import Logo from "@/components/Logo.astro"
 import ThemeToggle from "@/components/ThemeToggle.astro"
-import MobileMenu from "@/components/ui/mobile-menu"
+import { buttonVariants } from "@/components/ui/button"
 import { NAV_LINKS, SITE } from "@/consts"
+import { Icon } from "astro-icon/components"
 ---
 
 <header
-	class="bg-background/50 sticky top-0 z-10 backdrop-blur-md"
+	class="sticky top-0 z-10 bg-white/50 backdrop-blur-xs sm:p-2 lg:px-4 dark:bg-black/50"
 	transition:persist
 >
+	<input type="checkbox" id="nav-toggle" class="nav-toggle-input hidden" />
 	<div
-		class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 p-4"
+		class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 p-4"
 	>
 		<Link
 			href="/"
-			class="flex shrink-0 items-center gap-2 text-2xl font-medium"
+			class="text-foreground flex shrink-0 items-center gap-2 text-2xl font-medium"
 		>
-			<Logo class="size-8 text-[80] dark:text-[175]" />
+			<Logo class="size-8" />
 			<span style="font-weight: 400" , class="ml-1 font-mono">{SITE.title}</span
 			>
 		</Link>
-		<div class="flex items-center gap-2 md:gap-4">
-			<nav class="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
+		<div class="flex items-center gap-2 md:gap-6">
+			<nav class="hidden items-center gap-4 text-lg sm:gap-6 md:flex">
 				{
 					NAV_LINKS.map((item) => (
 						<Link
@@ -34,8 +36,47 @@ import { NAV_LINKS, SITE } from "@/consts"
 					))
 				}
 			</nav>
-			<MobileMenu client:load transition:persist />
 			<ThemeToggle transition:persist />
+			<label
+				for="nav-toggle"
+				class={`md:hidden ${buttonVariants({ variant: "outline", size: "icon" })}`}
+			>
+				<Icon name="lucide:menu" class="hamburger-icon size-4" />
+				<Icon name="lucide:x" class="x-icon hidden size-4" />
+			</label>
 		</div>
 	</div>
+	<nav id="secondary-nav" class="flex hidden flex-col">
+		{
+			NAV_LINKS.map((item) => (
+				<Link
+					href={item.href}
+					class="hover:bg-secondary text-foreground/60 sticky p-4 text-xl capitalize transition-colors sm:rounded-md"
+				>
+					{item.label}
+				</Link>
+			))
+		}
+	</nav>
 </header>
+
+<style>
+	.nav-toggle-input:checked ~ #secondary-nav {
+		display: flex;
+	}
+
+	/* Toggle icon visibility when checkbox is checked */
+	.nav-toggle-input:checked ~ div label .hamburger-icon {
+		display: none;
+	}
+
+	.nav-toggle-input:checked ~ div label .x-icon {
+		display: block;
+	}
+
+	@media screen and (min-width: 768px) {
+		#secondary-nav {
+			display: none !important;
+		}
+	}
+</style>

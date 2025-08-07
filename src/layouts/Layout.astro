@@ -16,19 +16,13 @@ import { SITE } from "@/consts"
 	</Head>
 	<body>
 		<Background />
-		<div class="flex h-fit min-h-screen flex-col font-sans md:gap-y-6">
+		<div
+			class="flex h-fit min-h-screen max-w-4xl flex-col gap-y-2 font-sans backdrop-blur-sm md:m-auto"
+			style="background-color: var(--background); opacity: 0.93; z-index: -1;"
+		>
 			<Header />
-			<main class="grow">
-				<div
-					class="relative m-2 flex max-w-3xl grow flex-col gap-y-6 p-4 backdrop-blur-sm sm:p-6 md:m-auto"
-				>
-					<div
-						class="absolute inset-0 rounded-xl md:rounded-2xl"
-						style="background-color: var(--background); opacity: 0.8; z-index: -1;"
-					>
-					</div>
-					<slot />
-				</div>
+			<main class="grow p-4 sm:px-6 lg:px-8">
+				<slot />
 			</main>
 			<Footer />
 		</div>
