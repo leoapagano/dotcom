@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components"
 ---
 
 <header
-	class="sticky top-0 z-10 bg-white/50 backdrop-blur-xs sm:p-2 lg:px-4 dark:bg-black/50"
+	class="sticky top-0 z-10 bg-white/50 backdrop-blur-xs sm:p-2 lg:px-4 dark:bg-black/50 border"
 	transition:persist
 >
 	<input type="checkbox" id="nav-toggle" class="nav-toggle-input hidden" />
@@ -46,12 +46,12 @@ import { Icon } from "astro-icon/components"
 			</label>
 		</div>
 	</div>
-	<nav id="secondary-nav" class="flex hidden flex-col">
+	<nav id="secondary-nav" class="flex hidden flex-col sm:gap-y-2">
 		{
 			NAV_LINKS.map((item) => (
 				<Link
 					href={item.href}
-					class="hover:bg-secondary text-foreground/60 sticky p-4 text-xl capitalize transition-colors sm:rounded-md"
+					class="hover:bg-secondary text-foreground/60 sticky px-4 py-2 text-xl capitalize transition-colors sm:rounded-md"
 				>
 					{item.label}
 				</Link>
