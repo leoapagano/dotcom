@@ -66,7 +66,14 @@ export default defineConfig({
       },
       uiFontFamily: 'var(--font-sans)',
     },
-  }), mdx(), react(), sitemap(), icon(), compress()],
+  }), mdx(), react(), sitemap(), icon(), compress({
+    HTML: {
+      'html-minifier-terser': {
+        collapseWhitespace: true,
+        conservativeCollapse: true
+      }
+    }
+  })],
   vite: {
     // @ts-ignore
     plugins: [tailwindcss()],
