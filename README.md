@@ -4,6 +4,8 @@ A clean, minimalistic website with a blog, a portfolio, and a contact form that 
 
 The site is based on a modified version of [Erudite](https://github.com/jktrn/astro-erudite) v1.5.0 by [Enscribe](https://enscribe.dev).
 
+This site is best viewed with Microsoft Internet Explorer 6.
+
 ## Features
 
 - 🌓 Dark mode support
@@ -196,7 +198,3 @@ The project schema is defined as follows:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-This site is best viewed with Microsoft Internet Explorer 6.
