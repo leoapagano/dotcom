@@ -1,8 +1,8 @@
 # leoapagano.com
 
-A clean, minimalistic website with a blog, a portfolio, and a contact form that nobody uses and yet I still maintain.
+A clean, minimalistic website with a portfolio which supports project tags, a blog which supports topic tags, and a contact form. On clients with JavaScript enabled, the website displays a random background image.
 
-The site is based on a modified version of [Erudite](https://github.com/jktrn/astro-erudite) v1.5.0 by [Enscribe](https://enscribe.dev).
+The site is based on a fork of [Erudite](https://github.com/jktrn/astro-erudite) v1.5.0 by [Enscribe](https://enscribe.dev).
 
 This site is best viewed with Microsoft Internet Explorer 6.
 
