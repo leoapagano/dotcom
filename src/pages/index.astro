@@ -31,8 +31,15 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 					/>
 					<h3 class="mb-2 text-3xl">About Me</h3>
 					<p class="text-muted-foreground mb-2">
-						I'm currently a rising junior at the University of Connecticut
-						studying Computer Science and Engineering.
+						I'm currently a 3rd year Computer Science and Engineering major at
+						the University of Connecticut, concentrating in <Link
+							href="https://computing.engineering.uconn.edu/undergraduate/major-programs/undergraduate-course-concentrations/#systems"
+							class="text-foreground"
+							external
+							underline
+						>
+							Systems and Networks.
+						</Link>
 					</p>
 					<p class="text-muted-foreground mb-2">
 						While you're here, check out some of the <Link
@@ -67,6 +74,24 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 			<h3 class="my-4 mb-2 text-3xl">Currently...</h3>
 			<ul class="text-muted-foreground">
 				<li>
+					I am a TA for an Intro to Computing for Engineers (<Link
+						href="https://classes.uconn.edu/?details&srcdb=1258&crn=4376"
+						class="text-foreground"
+						external
+						underline>CSE 1010</Link
+					>) class at UConn, teaching 40+ students across two labs the
+					fundamentals of Python and good software design.
+				</li>
+				<li>
+					I am also leading an effort to rewrite and modernize the backend
+					systems used in <Link
+						href="https://github.com/mars-ethics-team/mars-releases/releases"
+						class="text-foreground"
+						external
+						underline>a game</Link
+					> played by hundreds of engineering students at UConn and many other universities.
+				</li>
+				<li>
 					I recently interned for a UConn Senior Design project designing a
 					custom OS from scratch for the Raspberry Pi, to be used to teach OS
 					development.
@@ -78,26 +103,6 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 						external
 						underline>Engineering House Learning Community</Link
 					>.
-				</li>
-				<li>
-					I'm working on <Link
-						href="https://github.com/leoapagano/tb3k"
-						class="text-foreground"
-						external
-						underline>tb3k</Link
-					> - a Discord bot I wrote to keep track of my friends' birthdays and events.
-				</li>
-				<li>
-					I'm working on PQRS - a self-hosted, all-in-one NAS, unattended
-					backup, and Linux VM server, based on Proxmox.
-				</li>
-				<li>
-					I'm working on a custom CPU designed from scratch to be (somewhat)
-					RISC-V compliant.
-				</li>
-				<li>
-					I'm working on a tool to mount Ext4 volumes on Macs, with UX that
-					improves upon what is currently available in similar tools.
 				</li>
 			</ul>
 		</div>
